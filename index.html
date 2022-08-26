@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js"></script>
 </head>
 <body class="grid">
     <header class="h_flex background-img">
@@ -13,11 +14,10 @@
             <h2>Y<span>azen</span></h2>
             <div class="nav_links">
                 <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
                 <a href="#">Resume</a>
                 <a href="#">Portfolio</a>
-                <a href="#">Blog</a>
                 <a href="#">Contact</a>
                 <a href="#">Contact Me</a>
             </div>
@@ -26,18 +26,17 @@
         <div class="box">
             <img src="imgs/round-avatar.png" alt="avatar">
             <h1>Razan Smith</h1>
-            <p>A creative Freelancer & Full Stack Developer</p>            
+            <p>A creative Freelancer & Full Stack Developer</p>
         </div>
     </header>
 
     <main class="content">
         <section class="section-01">
-            <article>
+            <article id="about">
                 <img src="imgs/avatar.jpg" alt="avatar">
-                <p class="destaque">Discover</p>
-                <h2>About me</h2>
+                <h2><span class="border_bottom">About me</span></h2>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, numquam totam aspernatur fuga corrupti dolore maiores eveniet! Dicta asperiores, quod itaque mollitia quidem quia magni deleniti rem. Aliquam, modi hic.</p>
-                <div class="border_color flex_list">
+                <div class="border_color flex_list box">
                     <ul>
                         <li>Name: Razan Smith</li>
                         <li>Phone: +0 000 000-000</li>
@@ -52,10 +51,23 @@
                     </ul>
                 </div>
             </article>
-            <div class="section">01</div>
         </section>
         <section class="section-02">
-
+            <article id="services">
+                <h2><span class="border_bottom">My Services</span></h2>
+                <div class="box">
+                    <h3>Creative Design</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquam ab laborum cum suscipit saepe quo, animi non nobis iure est, aliquid itaque debitis, corrupti obcaecati inventore porro. Sint, magnam?</p>
+                </div>
+                <div class="box">
+                    <h3>Branding</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nam corrupti, reiciendis consectetur quaerat, odio, similique error perferendis ratione et quidem! Porro reprehenderit fugiat officia facilis quas enim hic quisquam.</p>
+                </div>
+                <div class="box">
+                    <h3>User Interface</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis magnam aperiam facere quidem, labore ducimus adipisci eius accusamus et blanditiis expedita sed sunt eum exercitationem quos laboriosam. Ad, laboriosam qui.</p>
+                </div>
+            </article>
         </section>
     </main>
 </body>
