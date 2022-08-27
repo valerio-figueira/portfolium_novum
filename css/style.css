@@ -138,8 +138,6 @@ a:hover{
 
 
 
-
-
 .content .section-01{
     position: relative;
 }
@@ -166,6 +164,7 @@ a:hover{
     overflow: hidden;
     background-color: var(--color2);
     padding: 70px 80px;
+    transition: 0.5s;
 }
 .content .section-01 article img{
     float: left;
@@ -276,6 +275,80 @@ a:hover{
 
 
 
+.content .section-03{
+    position: relative;
+}
+.content .section-03::before{
+    content: "03";
+    position: absolute;
+    top: 50px;
+    right: 40px;
+
+    font-size: 42px;
+    font-weight: bold;
+    color: var(--color7);
+}
+.content .section-03::after{
+    content: "";
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    height: 30px;
+    transform: rotate(90deg);
+    border-right: 2px solid var(--color1);
+}
+.content .section-03 article{    
+    overflow: hidden;
+    background-color: var(--color2);
+    padding: 70px 80px;
+}
+.content .section-03 article img{
+    float: left;
+    width: 32%;
+    margin-right: 30px;
+    filter: grayscale(0.3);
+    transition: 0.5s;
+    border: 3px solid transparent;
+}
+.content .section-03 article img:hover{
+    filter: grayscale(0);  
+    animation-name: twink;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    transition: 0.5s linear;
+}
+.content .section-03 article h2{    
+    font-weight: bolder;
+    font-size: 30px;
+}
+.content .section-03 article .view-word{
+    position: relative;
+}
+.content .section-03 article .view-word::after{
+    position: absolute;
+    content: "Projects";
+    font-size: 14px;
+    color: var(--color1);
+    top: -15px;
+    left: 0;
+}
+.content .section-03 article p{
+    margin: 20px 0;
+    color: var(--color5);
+}
+.content .section-03 article .destaque{
+    font-weight: bold;
+    color: var(--color1);
+}
+
+
+
+
+
+
 
 
 .border_color{
@@ -301,6 +374,7 @@ a:hover{
 ul li{
     color: var(--color5);
     margin: 10px 0;
+    transition: 0.5s;
 }
 
 .border_bottom{
@@ -347,12 +421,6 @@ ul li{
     }
 }
 
-@keyframes stir{
-    0%{
-
-    }
-}
-
 @keyframes twink{
     from {
         border: 3px solid transparent;
@@ -360,5 +428,85 @@ ul li{
     to{        
         border: 3px solid #56bd97;
         box-shadow: 0px 0px 10px 0px #56bd97;
+    }
+}
+
+
+
+
+
+
+
+
+
+/*RESPONSIVE LAYOUT*/
+@media screen and (max-width: 810px) {
+    .content .section-01 article{
+        padding: 70px 20px 70px 20px;
+    }
+    ul li{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .content .section-01 article{
+        padding: 70px 20px 70px 20px;
+    }
+    .content .section-01 article img{
+        float: left;
+        width: 32%;
+        margin-right: 15px;
+    }
+
+    .content .section-02 article{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "box1"
+        "box2"
+        "box3";
+    
+        padding: 60px;
+    }
+    .content .section-02 article .box{
+        margin: 50px 0 0;
+    }
+}
+@media screen and (max-width: 625px) {
+    .content .section-01 article .flex_list{
+        margin-top: 100px;
+    }
+    ul li{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 560px) {
+    .content .section-01 article .flex_list{
+        margin-top: 80px;
+    }
+    ul li{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 540px) {
+    .content .section-01 article .flex_list{
+        margin-top: 40px;
+    }
+    ul li{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .content .section-01 article .flex_list{
+        margin-top: 40px;
+    }
+    ul li{
+        font-size: 16px;
+    }
+    .content .section-01 article img{
+        float: left;
+        width: 150px;
+        margin-right: 15px;
     }
 }
