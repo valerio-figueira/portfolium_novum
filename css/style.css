@@ -40,10 +40,19 @@ a:hover{
 
 /*HEADER CONFIG*/
 .background-img{
-    background-image: url(../imgs/mountain.png);
+    position: relative;    
+}
+.background-img::after{
+    position: absolute;
+    width : 100%;
+    height: 100%;
+    z-index: -1;
+    content: "";
+    background-image: url(../imgs/pexels-joyston-judah.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
+    opacity: 0.5;
 }
 .h_flex{
     display: flex;
@@ -75,25 +84,51 @@ a:hover{
     color: var(--color3);
     border: 1px solid var(--color3);
 }
-.box{
+.h_flex .box{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
     padding: 100px 0;
 }
-.box img{
+.h_flex .box img{    
     width: 40%;
+    border-radius: 50%;
+    filter: grayscale(0.3);
+    transition: 0.5s;
+    border: 3px solid transparent;
 }
-.box h1{
+.h_flex .box img:hover{
+    filter: grayscale(0);
+}
+.h_flex .box img:hover{
+    animation-name: twink;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    transition: 0.5s linear;
+}
+
+.h_flex .box h1{
     font-family: 'Prompt', sans-serif;
     font-size: 38px;
     color: var(--color1);
 }
-
+.h_flex .box h1::before{
+    content: "</";
+    color: #56bd97;
+    animation-name: opacity;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
 .navbar h2{
     font-family: 'Prompt', sans-serif;
-    font-size: 30px;    
+    font-size: 30px;
 }
 .navbar h2 span{
     color: var(--color1);
@@ -108,29 +143,62 @@ a:hover{
 .content .section-01{
     position: relative;
 }
-.content .section-01::after{
+.content .section-01::before{
     content: "01";
     position: absolute;
     top: 50px;
-    right: 15px;
+    right: 40px;
 
     font-size: 42px;
     font-weight: bold;
     color: var(--color7);
 }
+.content .section-01::after{
+    content: "";
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    height: 30px;
+    transform: rotate(90deg);
+    border-right: 2px solid var(--color1);
+}
 .content .section-01 article{    
     overflow: hidden;
     background-color: var(--color2);
-    padding: 70px 80px;    
+    padding: 70px 80px;
 }
 .content .section-01 article img{
     float: left;
-    width: 30%;
+    width: 32%;
     margin-right: 30px;
+    filter: grayscale(0.3);
+    transition: 0.5s;
+    border: 3px solid transparent;
 }
-.content .section-01 article h2{
+.content .section-01 article img:hover{
+    filter: grayscale(0);  
+    animation-name: twink;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    transition: 0.5s linear;
+}
+.content .section-01 article h2{    
     font-weight: bolder;
     font-size: 30px;
+}
+.content .section-01 article .view-word{
+    position: relative;
+}
+.content .section-01 article .view-word::after{
+    position: absolute;
+    content: "Discover";
+    font-size: 14px;
+    color: var(--color1);
+    top: -15px;
+    left: 0;
 }
 .content .section-01 article p{
     margin: 10px;
@@ -147,15 +215,24 @@ a:hover{
     position: relative;
     background-color: var(--color4);
 }
-.content .section-02::after{
+.content .section-02::before{
     position: absolute;
     content: "02";
     top: 50px;
-    right: 15px;
+    right: 40px;
 
     font-size: 42px;
     font-weight: bold;
     color: var(--color6);
+}
+.content .section-02::after{
+    content: "";
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    height: 30px;
+    transform: rotate(90deg);
+    border-right: 2px solid var(--color1);
 }
 .content .section-02 article{
     display: grid;
@@ -168,6 +245,7 @@ a:hover{
 }
 .content .section-02 article h2{
     color: var(--color3);
+    margin-left: 10px;
     grid-area: header;
 }
 .content .section-02 article .box:nth-of-type(1){
@@ -248,3 +326,39 @@ ul li{
 }
 
 
+@keyframes colored_shadow{
+    0%{
+        box-shadow: 0px 0px 10px 0px #e4514f;
+    }
+    50%{
+        box-shadow: 0px 0px 10px 0px #ffffff77;
+    }
+    100%{
+        box-shadow: 0px 0px 10px 0px #0059ff77;
+    }
+}
+
+@keyframes opacity{
+    from {
+        opacity: 1;
+    }
+    to{
+        opacity: 0.1;
+    }
+}
+
+@keyframes stir{
+    0%{
+
+    }
+}
+
+@keyframes twink{
+    from {
+        border: 3px solid transparent;
+    }
+    to{        
+        border: 3px solid #56bd97;
+        box-shadow: 0px 0px 10px 0px #56bd97;
+    }
+}
