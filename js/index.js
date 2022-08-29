@@ -120,7 +120,7 @@ function reveal(){
 }
 */
 
-const reveal = document.querySelector(".reveal");
+const reveal = document.querySelectorAll(".reveal");
 const callback = function(entries){
     entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -131,4 +131,14 @@ const callback = function(entries){
     });
 }
 const io = new IntersectionObserver(callback);
-io.observe(reveal);
+for(let view of reveal){
+    io.observe(view);
+}
+
+
+
+
+
+const copyright = document.querySelector(".copyright");
+const year = new Date().getFullYear();
+copyright.innerHTML = `\u00A9 All rights reserved - ${year}`;
