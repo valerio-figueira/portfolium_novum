@@ -50,11 +50,11 @@ const projects = [
 ];
 
 /*Insert projects into section tag*/
-let starterIndex = 0;
+let startIndex = 0;
 let endIndex = 6;
 let indexPoint = 6;
 
-displayProjects(starterIndex, endIndex);
+displayProjects(startIndex, endIndex);
 
 function displayProjects(start, end){
     const portfolium = document.querySelector(".portfolium");
@@ -71,14 +71,14 @@ function displayProjects(start, end){
     }).join("");
     btnController(start, end);
     portfolium.innerHTML = html;
-    return starterIndex = start, endIndex = end;
+    return startIndex = start, endIndex = end;
 }
 
 const next = document.querySelector(".controller #next");
 const prev = document.querySelector(".controller #prev");
 
-next.addEventListener("click", () => displayProjects(starterIndex -= indexPoint, endIndex -= indexPoint));
-prev.addEventListener("click", () => displayProjects(starterIndex += indexPoint, endIndex += indexPoint));
+next.addEventListener("click", () => displayProjects(startIndex -= indexPoint, endIndex -= indexPoint));
+prev.addEventListener("click", () => displayProjects(startIndex += indexPoint, endIndex += indexPoint));
 
 function btnController(start, end){
     const next = document.querySelector(".controller #next");
@@ -119,7 +119,7 @@ function reveal(){
     }
 }
 */
-
+/*Fade-in animation on scroll*/
 const reveal = document.querySelectorAll(".reveal");
 const callback = function(entries){
     entries.forEach(entry => {
