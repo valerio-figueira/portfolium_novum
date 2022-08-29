@@ -8,6 +8,8 @@
     --color5: #d1d1d1;
     --color6: #3c4056;
     --color7: #353b56;
+    --color8: #56bd97;
+    --color9: #ae2725;
 }
 
 html{
@@ -139,7 +141,7 @@ a:hover{
 
 
 .content .section-01{
-    position: relative;
+    position: relative;    
 }
 .content .section-01::before{
     content: "01";
@@ -164,7 +166,7 @@ a:hover{
     overflow: hidden;
     background-color: var(--color2);
     padding: 70px 80px;
-    transition: 0.5s;
+    transition: 0.5s;    
 }
 .content .section-01 article img{
     float: left;
@@ -300,7 +302,7 @@ a:hover{
 .content .section-03 article{    
     overflow: hidden;
     background-color: var(--color2);
-    padding: 70px 80px;
+    padding: 70px 80px 20px;
 }
 .content .section-03 article img{
     float: left;
@@ -343,10 +345,37 @@ a:hover{
     font-weight: bold;
     color: var(--color1);
 }
-
-
-
-
+.content .portfolium{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0px 80px 30px;
+    background-color: var(--color2);
+}
+.content .portfolium .projects{
+    padding: 40px 10px;
+    margin: 7px;
+    background-color: var(--color4);
+}
+.content .portfolium .projects img{
+    width: 100%;
+    box-shadow: 0px 0px 10px 0px #00000075;
+    margin: 0 -2px 10px;
+}
+.content .portfolium .projects h3{
+    padding: 5px 0;
+}
+.content .portfolium .projects .knowmore{
+    font-size: 13px;
+    color: var(--color1);
+    padding: 0;
+    transition: 0.5s;
+}
+.content .portfolium .projects .knowmore:hover{
+    color: var(--color9);
+}
+.content .portfolium .projects .knowmore .icon{
+    font-size: 16px;
+}
 
 
 
@@ -398,6 +427,26 @@ ul li{
 .clearfix{
     clear: both;
 }
+
+
+
+.reveal{
+    position: relative;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 2s;
+}
+.reveal.active{
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+
+
+
+
+
 
 
 @keyframes colored_shadow{
