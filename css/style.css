@@ -348,7 +348,7 @@ a:hover{
 .content .portfolium{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 0px 80px 30px;
+    padding: 0px 73px 30px;
     background-color: var(--color2);
 }
 .content .portfolium .projects{
@@ -359,7 +359,7 @@ a:hover{
 .content .portfolium .projects img{
     width: 100%;
     box-shadow: 0px 0px 10px 0px #00000075;
-    margin: 0 -2px 10px;
+    margin: 0 0 10px;
 }
 .content .portfolium .projects h3{
     padding: 5px 0;
@@ -387,9 +387,49 @@ a:hover{
     animation-delay: 0;
     animation-direction: alternate;
 }
-
-
-
+/*NEXT & PREV BUTTONS*/
+.section-03{
+    padding: 50px 0;
+    background-color: var(--color2);
+}
+.section-03 .controller #prev{
+    display: inline;
+    position: absolute;
+    bottom: 30px;
+    right: 30%;
+    font-size: 23px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: var(--color3);
+    transition: all 0.5s;
+}
+.section-03 .controller #prev:hover{
+    color: var(--color1);
+}
+.section-03 .controller #next{
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 30%;
+    font-size: 23px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: var(--color3);
+    transition: all 0.5s;
+}
+.section-03 .controller #next:hover{
+    color: var(--color1);
+}
+.section-03 .controller #prev[disabled]{
+    color: #696969;
+    cursor: default;
+}
+.section-03 .controller #next[disabled]{
+    color: #696969;
+    cursor: default;
+}
 
 .border_color{
     display: inline-block;
@@ -447,7 +487,7 @@ ul li{
     opacity: 0;
     transition: all 2s;
 }
-.reveal.active{
+.reveal.inview{
     transform: scale(1);
     opacity: 1;
 }
