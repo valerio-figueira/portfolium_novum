@@ -74,6 +74,9 @@ function displayProjects(start, end){
     return startIndex = start, endIndex = end;
 }
 
+/*
+NEXT/PREV BTNs CONTROLLER
+*/
 const next = document.querySelector(".controller #next");
 const prev = document.querySelector(".controller #prev");
 
@@ -119,7 +122,11 @@ function reveal(){
     }
 }
 */
-/*Fade-in animation on scroll*/
+
+
+/*
+FADE IN ANIMATION ON SCROLL
+*/
 const reveal = document.querySelectorAll(".reveal");
 const callback = function(entries){
     entries.forEach(entry => {

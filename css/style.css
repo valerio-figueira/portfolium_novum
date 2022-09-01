@@ -54,7 +54,7 @@ a:hover{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .h_flex{
     display: flex;
