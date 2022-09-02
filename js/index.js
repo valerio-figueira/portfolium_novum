@@ -1,52 +1,58 @@
 const projects = [
     {
-        name: "Project A",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        img: "imgs/pexels-soumil-kumar-735911.jpg",
-        url: "#"
+        name: "Base Apparel",
+        description: "Uma landing page de vestuário feminino, com entrada de cadastro para lista de e-mails, feita em HTML e CSS.",
+        img: "imgs/Projetos/base-apparel.jpg",
+        url: "https://valerio-figueira.github.io/base-apparel-page/"
     },
     {
-        name: "Project B",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        img: "imgs/pexels-bich-tran-669996.jpg",
-        url: "#"
+        name: "Landing Page",
+        description: "Huddle Landing Page é um projeto feito com HTML e CSS. Algumas propriedades de CSS utilizadas foram Grid Layout, Flex Box, @mediascreen (para deixá-lo responsivo), entre outras.",
+        img: "imgs/Projetos/huddle.jpg",
+        url: "https://valerio-figueira.github.io/huddle-landing-page/"
     },
     {
-        name: "Project C",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        img: "imgs/pexels-josh-sorenson-1714208.jpg",
-        url: "#"
+        name: "IPMA",
+        description: "Meu primeiro projeto real, feito para o Instituto de Previdência de minha cidade. O site é todo responsivo, adaptável a qualquer formato de tela. Feito com HTML, CSS e Javascript.",
+        img: "imgs/Projetos/IPMA.jpg",
+        url: "https://www.ipmamonte.mg.gov.br/"
     },
     {
-        name: "Project D",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        img: "imgs/pexels-sora-shimazaki-5926389.jpg",
-        url: "#"
+        name: "Subscription Page",
+        description: "Esta é uma página de cadastro, com valor de venda do produto por mensalidade. Feita com HTML e CSS apenas. A página é responsiva, se adaptando muito bem a qualquer dispositivo.",
+        img: "imgs/Projetos/subscription-page.jpg",
+        url: "https://valerio-figueira.github.io/singlepage-subscription/"
     },
     {
-        name: "Project E",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        img: "imgs/pexels-negative-space.jpg",
-        url: "#"
+        name: "Ruby Project",
+        description: "Este é um dos meus projetos fictícios, no qual me empenhei por boas horas para me aprimorar como desenvolvedor web. Gostei muito de tê-lo feito, utilizei várias propriedades CSS de estilização e.g. absolute position, flex, grid, @mediascreen, efeito parallax, transition, etc.",
+        img: "imgs/Projetos/ruby-project.jpg",
+        url: "https://valerio-figueira.github.io/ruby-project/"
     },
     {
-        name: "Project F",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        img: "imgs/pexels-pixabay-60504.jpg",
-        url: "#"
+        name: "Jasper Project",
+        description: "Meu primeiro site feito com efeito parallax. É um site simples, mas com diversas propriedades avançadas de CSS. Há nele um navigator para mobiles e PCs desktop.",
+        img: "imgs/Projetos/jasper-project.jpg",
+        url: "https://valerio-figueira.github.io/jasper-project/"
     },
     {
-        name: "Project G",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        img: "imgs/pexels-cottonbro-5474295.jpg",
-        url: "#"
+        name: "Black Onyx",
+        description: "Este modelo de site, com a propriedade grid, contém três colunas de artigos que, sendo visíveis para PCs desktop e outras telas, se ajustam a uma ou duas colunas conforme o dispositivo mobile.",
+        img: "imgs/Projetos/onyx-project.jpg",
+        url: "https://valerio-figueira.github.io/black-onyx-page/"
     },
     {
-        name: "Project H",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        img: "imgs/pexels-josh-sorenson-1714208.jpg",
-        url: "#"
+        name: "Turmalina",
+        description: `Um simples modelo de site, o qual tentei fazer "imitando" o modelo de site da <a href="https://www.rocketseat.com.br/" target="_blank" rel="external">rocketseat</a>, do qual faço parte como estudante de programação.`,
+        img: "imgs/Projetos/turmalina.jpg",
+        url: "https://valerio-figueira.github.io/turmalina-page/"
     },
+    {
+        name: "Lapis Lazuli",
+        description: "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.",
+        img: "imgs/Projetos/lapis-lazuli.jpg",
+        url: "https://valerio-figueira.github.io/lapis-lazuli-page/"
+    }
 ];
 
 /*Insert projects into section tag*/
@@ -61,10 +67,10 @@ function displayProjects(start, end){
     const html = projects.slice(start, end).map(project => {
         return `
         <article class="projects">
-            <a href="${project.url}">
+            <a href="${project.url} target="_blank">
                 <img src="${project.img}" alt="${project.name}">
             </a>
-            <a href="${project.url}"><h3 class="name">${project.name}</h3></a>
+            <a href="${project.url}" target="_blank"><h3 class="name">${project.name}</h3></a>
             <a href="${project.url}" target="blank" class="knowmore">Know more <span class="fa fa-angle-double-right icon"></span></a>
         </article>
         `;
@@ -148,4 +154,4 @@ for(let view of reveal){
 
 const copyright = document.querySelector(".copyright");
 const year = new Date().getFullYear();
-copyright.innerHTML = `\u00A9 All rights reserved - ${year}`;
+copyright.innerHTML = `Direitos Autorais - \u00A9 ${year}`;
