@@ -12,39 +12,42 @@
 <body class="grid">
     <header class="h_flex background-img" id="home">
         <nav class="navbar flex_nav">
-            <h2>H<span>i there!</span> <span></span></h2>
+            <a href="./index.html">
+                <h2>D<span>eveloper</span></h2>
+            </a>
             <div class="nav_links">
-                <a href="#home">Home</a>
+                <a href="./index.html">Home</a>
                 <a href="#about">Sobre</a>
                 <a href="#services">Serviços</a>
                 <a href="#portfolium">Portfólio</a>
                 <a href="#contact">Contato</a>
-                <a href="#">Contate-me</a>
-            </div>
+                <button class="close-nav">&times;</button>
+            </div>            
+            <button class="fa fa-bars mobile-icon"></button>
         </nav>
 
         <div class="box">
-            <div class="inner-shadow"><img src="imgs/valerio.png" alt="avatar"></div>
+            <div class="inner-shadow"><img src="imgs/myself-round.png" alt="avatar"></div>
             <h1>Valerio</h1>
-            <p>Freelancer & Web Developer - Frontend</p>
+            <p>Student & Web Developer - Frontend</p>
         </div>
     </header>
 
     <main class="content">
         <section class="section-01 reveal">
             <article id="about">
-                <img src="imgs/VALERIO.jpg" alt="avatar">
+                <img src="imgs/Myself.png" alt="avatar">
                 <h2><span class="border_bottom view-word">Sobre</span></h2>
-                <p>Olá! Sou desenvolvedor web, frontend. Faço projetos com HTML, CSS e Javascript. Além disso, tenho também alguma experiência com Java (Backend).</p>
+                <p>Olá! Sou estudante de tecnologias web e desenvolvedor frontend. Faço projetos com Javascript, React, HTML e CSS.</p>
                 <div class="colored_border flex_list box">
                     <ul>
                         <li>Nome: Valerio Figueira</li>
-                        <li>Phone: 34 99971-3607</li>
-                        <li>Experiência: 1 ano</li>
+                        <li>Tel: 34 99971-3607</li>
+                        <li>Experiência: Em busca dela</li>
                     </ul>
                     <ul>
-                        <li>Idade: 27</li>
-                        <li>Address: Monte Alegre, MG</li>
+                        <li class="age"></li>
+                        <li>End.: Monte Alegre de Minas, MG</li>
                         <li>Freelance: Disponível</li>
                     </ul>
                 </div>
@@ -54,27 +57,29 @@
             <article id="services">
                 <h2><span class="border_bottom">Serviços</span></h2>
                 <div class="box colored_border">
-                    <h3>HTML</h3>
-                    <p>Meus projetos são feitos seguindo, em HTML, uma estrutura semântica muito bem planejada, para melhor posicionamento e engajamento do site nos mecanismos de pesquisa.</p>
+                    <h3>Javascript & Git</h3>
+                    <p>Meus projetos web são feitos em Javascript (ES6). Páginas dinâmicas, utilização de API, manipulação DOM, programação funcional, entre outros detalhes.</p>
+                    <p>Além disso, faço uso do github para versionamento dos projetos.</p>
                 </div>
                 <div class="box colored_border">
-                    <h3>CSS</h3>
-                    <p>Os projetos são elaborados com as mais diversas propriedades de estilização, e.g. Flexbox, GridLayout, Absolute position, Float, etc. Tudo conscientemente bem determinado.</p>
+                    <h3>HTML & CSS</h3>
+                    <p>Algumas propriedades de estilização utilizadas: Flexbox, GridLayout, Absolute position, Float, MediaQueries, Animation, etc.</p>
+                    <p>Minhas principais bases de HTML e CSS provém dos cursos do professor Guanabara.</p>
                 </div>
                 <div class="box colored_border">
                     <h3>Competências</h3>
                     <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
                         <li>Javascript</li>
                         <li>Java</li>
+                        <li>Github</li>
+                        <li>React / NPM</li>
+                        <li>HTML & CSS</li>
                         <li>Linux</li>
-                        <li>Redes LAN-WAN</li>
                     </ul>
                 </div>
             </article>
         </section>
-        <section class="section-03 reveal">
+        <section class="section-03 reveal" id="section-03">
             <article class="box">
                 <h2><span class="border_bottom view-word">Portfólio</span></h2>
                 <p>Todos os meus projetos, publicados aqui em meu portfólio, são feitos seguindo a minha linha de evolução e aprendizado. Inclusive a publicação deste portfólio.</p>
@@ -84,19 +89,13 @@
                 <button class="fa fa-angle-double-left" id="next"></button>
                 <button class="fa fa-angle-double-right" id="prev"></button>
             </div>
-
         </section>
     </main>
 
     <footer class="section-04 reveal" id="contact">        
-        <div class="social">
-            <a href="#" class="fa fa-envelope"></a>
-            <a href="#" class="fa fa-linkedin-square"></a>
-            <a href="#" class="fa fa-github"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-facebook-official"></a>
-        </div>
+        <div class="social"></div>
         <p class="copyright"></p>
+        <button class="fa fa-angle-up up-btn"></button>
     </footer>
 </body>
 </html>

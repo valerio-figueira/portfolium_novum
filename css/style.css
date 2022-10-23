@@ -10,6 +10,7 @@
     --color7: #353b56;
     --color8: #56bd97;
     --color9: #ae2725;
+    --mobile: 360px;
 }
 
 html{
@@ -19,6 +20,7 @@ html{
 *{
     box-sizing: border-box;
     margin: 0;
+    transition: .3s linear;
 }
 
 body{
@@ -26,8 +28,10 @@ body{
     background-color: #1c1c1c;
     color: white;
 
+    min-width: var(--mobile);
     max-width: 1000px;
     margin: auto;
+    overflow-x: hidden;
 }
 
 a{
@@ -58,7 +62,7 @@ a:hover{
 }
 .h_flex{
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
 }
 .flex_nav{
     display: flex;
@@ -67,12 +71,29 @@ a:hover{
     justify-content: space-around;
     padding: 15px;
 }
+.flex_nav a:nth-child(1):hover{
+    color: var(--color1);
+}
+.flex_nav a:nth-child(1):hover span{
+    color: white;
+}
 .flex_nav .nav_links{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
     flex-basis: auto;
+}
+.flex_nav .mobile-icon{
+    background: transparent;
+    color: var(--color1);
+    border: none;
+    cursor: pointer;
+    font-size: 1.7rem;
+    display: none;
+}
+.flex_nav .mobile-icon:hover{
+    color: var(--color3);
 }
 .flex_nav a:last-child{
     color: var(--color1);
@@ -96,7 +117,7 @@ a:hover{
 }
 .h_flex .box .inner-shadow{
     border-radius: 50%;
-    box-shadow: inset 0px 0px 30px 1px #000000, 0px 0px 10px 0px #00000047;
+    box-shadow: inset 0px 0px 40px 0px #0000007d, 0px 0px 10px 0px #00000047;
 }
 .h_flex .box img{    
     position: relative;
@@ -145,7 +166,9 @@ a:hover{
     color: var(--color1);
     font-weight: bolder;    
 }
-
+.navbar .close-nav{
+    display: none;
+}
 
 
 
@@ -183,7 +206,8 @@ a:hover{
     margin-right: 30px;
     filter: grayscale(0);
     transition: 0.5s;
-    border: 3px solid transparent;    
+    border: 3px solid transparent;
+    background: #1c1c1c;
 }
 .content .section-01 article .inner-shadow{
     background-color: #000000;
@@ -360,7 +384,7 @@ a:hover{
 }
 .content .portfolium{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     padding: 0px 73px 30px;
     background-color: var(--color2);
 }
@@ -503,7 +527,7 @@ ul li{
 .section-04{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     position: relative;
     background-color: var(--color4);
     padding: 70px 80px;
@@ -530,6 +554,7 @@ ul li{
 }
 .social{
     display: flex;
+    justify-content: center;
 }
 .social a{
     margin: 15px;
@@ -538,8 +563,25 @@ ul li{
 .social a:hover{
     animation: animatedIcon 1s 0s infinite alternate;
 }
-.copyright{
+footer .copyright{
+    text-align: center;
     margin: 50px 0 0;
+}
+footer .up-btn{
+    position: absolute;
+    right: 2.5rem;
+    top: 10rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--color5);
+    font-weight: bold;
+    background: var(--color7);
+    padding: .6rem .8rem .8rem;
+    border-radius: 4px;
+    border: none;
+}
+footer .up-btn:hover{
+    color: var(--color1);
 }
 
 
@@ -642,6 +684,15 @@ ul li{
     }
 }
 @media screen and (max-width: 750px) {
+    .background-img::after{
+        background-image: url(../imgs/pexels-negative-space.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+
+
     .content .section-01 article{
         padding: 70px 20px 70px 20px;
     }
@@ -650,7 +701,6 @@ ul li{
         width: 32%;
         margin-right: 15px;
     }
-
     .content .section-02 article{
         display: grid;
         grid-template-columns: 1fr;
@@ -665,41 +715,117 @@ ul li{
     .content .section-02 article .box{
         margin: 50px 0 0;
     }
+
+
+    /*RESPONSIVE NAV*/
+    .navbar{
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar .nav_links{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1000;
+        width: 15rem;
+        padding: 5rem 0;
+        margin: 0;
+        transform: translateX(100%);
+    }
+    .nav_links.responsive{
+
+        background-color: var(--color2);
+        transform: translateX(0);
+    }
+    .navbar .nav_links.responsive a{
+        display: block;
+        padding: .4rem;
+        margin: 0;
+    }
+    .nav_links.responsive a:last-child{
+        margin: 0;
+    }
+    .navbar .close-nav{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: .5rem;
+
+        background: transparent;
+        color: var(--color6);
+        border: none;
+        cursor: pointer;
+        font-size: 2.7rem;
+    }
+    .navbar .close-nav:hover{
+        color: var(--color1);
+    }
+    .flex_nav .mobile-icon{
+        display: block;
+        padding: 1.5rem 0 0;
+    }
 }
 @media screen and (max-width: 625px) {
-    .content .section-01 article .flex_list{
-        margin-top: 100px;
-    }
     ul li{
         font-size: 16px;
     }
 }
-@media screen and (max-width: 560px) {
-    .content .section-01 article .flex_list{
-        margin-top: 80px;
+@media screen and (max-width: 600px) {
+    .content .section-03 article{
+        padding: 1rem;
     }
+    .content .portfolium{
+        padding: 1rem .5rem;
+    }
+}
+@media screen and (max-width: 560px) {
     ul li{
         font-size: 16px;
     }
 }
 @media screen and (max-width: 540px) {
-    .content .section-01 article .flex_list{
-        margin-top: 40px;
-    }
-    ul li{
-        font-size: 16px;
+    .content .section-01 article img{
+        margin-top: -1rem;
+        margin-bottom: 1rem;
     }
 }
 @media screen and (max-width: 500px) {
+    .content .section-01::before{
+        top: .1rem;
+    }
+    .content .section-01::after{
+        top: .5rem;
+    }
     .content .section-01 article .flex_list{
         margin-top: 40px;
     }
+    .content .section-01 article p{
+        text-align: justify;
+        font-size: .9rem;
+    }
+
+    .flex_list{
+        clear: both;
+        flex-direction: column;
+        margin: 0 2rem;
+    }
     ul li{
-        font-size: 16px;
+        padding: 0; margin: .5rem 0;
+        font-size: 1rem;
     }
     .content .section-01 article img{
         float: left;
         width: 150px;
         margin-right: 15px;
+    }
+    footer .social{
+        margin: 4rem 0 0;
+    }
+    footer .up-btn{
+        top: 14rem;
+        right: 1rem;
     }
 }
